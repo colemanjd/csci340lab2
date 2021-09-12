@@ -13,18 +13,18 @@
 <body>
 <div class="bubble">
   <h2>Random Anime Quote</h2>
-  <p>fetch('https://animechan.vercel.app/api/random')
+  fetch('https://animechan.vercel.app/api/random')
         .then(response => response.json())
-        .then(quote => console.log(quote)) </p>
+        .then(quote => console.log(quote)) 
   <p><input id="animebutton" type="button" value="Random Anime"></input></p>
   
 </div>
 
 <div class="touch">
   <h2>Random Activity</h2>
-  <p>fetch('http://www.boredapi.com/api/activity/')
+  fetch('http://www.boredapi.com/api/activity/')
         .then(response => response.json())
-        .then(quote => console.log(quote)) </p>
+        .then(quote => console.log(quote)) 
   <p><input id="activitybutton" type="button" value="Random Activity"></input>
   </p>
  
