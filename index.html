@@ -2,7 +2,9 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <!-- CSS only -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <title>Do These Correlate?</title>
   <h1> Does This Random Anime Quote and Random Activity Correlate?  </h1>
@@ -11,31 +13,52 @@
 </head>
   
 <body>
-<div class="bubble">
+<div class="anime">
   <h2>Random Anime Quote</h2>
-  fetch('https://animechan.vercel.app/api/random')
-        .then(response => response.json())
-        .then(quote => console.log(quote)) 
+  <p class="animepick">
+          </p>
   <p><input id="animebutton" type="button" value="Random Anime"></input></p>
   
 </div>
 
-<div class="touch">
+<div class="activity">
   <h2>Random Activity</h2>
-  fetch('http://www.boredapi.com/api/activity/')
-        .then(response => response.json())
-        .then(quote => console.log(quote)) 
+  <p class="activitypick">
+          </p>
   <p><input id="activitybutton" type="button" value="Random Activity"></input>
   </p>
  
 </div>
 
-<div class="vase">
+<div class="correlate">
   <h3>Do These Correlate?</h3>
   
   <p> <input id="yesbutton" type="button" value="Yes"></input> </p>
   <p> <input id="nobutton" type="button" value="No"></input> </p>
+  <div id="counts"></div>
+  <div id="results"></div>
+  <script>
+    var numyes = 0;
+     $("#counts").text("You clicked " + numyes + " times");
+    $("#yesbutton").on("click", function(event){
+        numyes++;
+     $("#results").text("The Anime Quote and Activity have Correlated " + numyes + " times");
+    
+     });
+    
+    var numno = 0;
+     $("#counts").text("You clicked " + numno + " times");
+    $("#nobutton").on("click", function(event){
+        numyes++;
+    $("#results").text("The Anime Quote and Activity haven't Correlated " + numyes + " times");
+     });
+    
+  
+     $("#results").text("Your page has a " + (numyes/(numyes+numno)) + "% Correlation Percentage");
+    
  
+    
+    </script>
   </p>
  
 </div>
