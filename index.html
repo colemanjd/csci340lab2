@@ -35,30 +35,7 @@
   
   <p> <input id="yesbutton" type="button" value="Yes"></input> </p>
   <p> <input id="nobutton" type="button" value="No"></input> </p>
-  <div id="counts"></div>
-  <div id="results"></div>
-  <script>
-    var numyes = 0;
-     $("#counts").text("You clicked " + numyes + " times");
-    $("#yesbutton").on("click", function(event){
-        numyes++;
-     $("#results").text("The Anime Quote and Activity have Correlated " + numyes + " times");
-    
-     });
-    
-    var numno = 0;
-     $("#counts").text("You clicked " + numno + " times");
-    $("#nobutton").on("click", function(event){
-        numyes++;
-    $("#results").text("The Anime Quote and Activity haven't Correlated " + numyes + " times");
-     });
-    
-  
-     $("#results").text("Your page has a " + (numyes/(numyes+numno)) + "% Correlation Percentage");
-    
- 
-    
-    </script>
+
   </p>
  
 </div>
